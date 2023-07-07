@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $html .= '<tr><td>'.$linea.'</td><td>'.strlen($linea).'</td></tr>';
             }
 
-            $html .= '</tbody></table><a href="../index.php" class="btn btn-primary mt-3">Volver</a></div></body></html>';
+            $html .= '</tbody></table><a href="../index.php" class="btn btn-warning mt-3">Volver</a></div></body></html>';
 
             echo $html;
         } else {

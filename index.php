@@ -7,6 +7,7 @@
 <body onload="recuperarDatosFormulario()">
     <div class="container">
         <h1 class="mt-5">Subir archivo TXT</h1>
+        
         <?php
             session_start();
             if (!empty($_SESSION['error'])) {
@@ -26,6 +27,8 @@
             <button type="submit" class="btn btn-primary mt-3">Enviar</button>
             <button type="submit" name="borrar" class="btn btn-danger mt-3">Borrar datos</button>
         </form>
+        <a href="Modules/calculadora.php" class="btn btn-success mt-3">Ir a calculadora de numeros pares</a>
+
     </div>
     <script>
     function guardarDatosFormulario() {
