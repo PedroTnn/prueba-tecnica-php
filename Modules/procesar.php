@@ -2,11 +2,14 @@
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Comprobación del campo de email
     if (empty($_POST["email"]) || !filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
         $_SESSION['error'] = 'Por favor ingrese un correo electrónico válido';
         header('Location: ' . $_SERVER['HTTP_REFERER']);
         exit;
     } else {
+        
+        // Comprobación del archivo
         if ($_FILES['archivo']['error'] == 0 && pathinfo($_FILES['archivo']['name'], PATHINFO_EXTENSION) == 'txt') {
             $archivo = file($_FILES['archivo']['tmp_name'], FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
@@ -23,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <thead><tr><th>Palabra</th><th>Cantidad de Letras</th></tr></thead>
                         <tbody>';
 
-
+            // Generación de filas de la tabla con palabras y su longitud
             foreach($archivo as $linea) {
                 $html .= '<tr><td>'.$linea.'</td><td>'.strlen($linea).'</td></tr>';
             }
