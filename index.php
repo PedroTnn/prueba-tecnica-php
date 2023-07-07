@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Subir TXT y Contar Letras</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body onload="recuperarDatosFormulario()">
     <div class="container">
@@ -29,13 +29,13 @@
     </div>
     <script>
     function guardarDatosFormulario() {
-        // Almacena los datos del formulario en el almacenamiento local antes de enviar el formulario
+       
         localStorage.setItem('email', document.getElementById('email').value);
-        // El campo del archivo no puede ser almacenado debido a restricciones de seguridad
+     
     }
 
     function recuperarDatosFormulario() {
-        // Recupera los datos del formulario del almacenamiento local cuando se carga la página
+  
         var email = localStorage.getItem('email');
         if(email) {
             document.getElementById('email').value = email;
